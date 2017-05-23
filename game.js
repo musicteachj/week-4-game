@@ -3,7 +3,7 @@ $(document).ready(function() {
   var defenderChosen = false;
 
   var audioElement = document.createElement("audio");
-      audioElement.setAttribute("src", "Everyday.m4a");
+      audioElement.setAttribute("src", "StarWarsTheme.m4a");
 
   $(".theme-button").on("click", function() {
         audioElement.play();
