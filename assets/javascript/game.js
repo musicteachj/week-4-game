@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  var attackerChosen = false;
-  var defenderChosen = false;
+  
 
   $('.aButton').hide();
 
@@ -97,8 +96,11 @@ var vader = {
   DEF: 15,
 };
 
-var hero
-var enemy
+var hero = "";
+var enemy = "";
+
+var attackerChosen = false;
+var defenderChosen = false;
 
 $(".jarJar").on("click", function() {
   if(attackerChosen == false){
@@ -107,12 +109,12 @@ $(".jarJar").on("click", function() {
       alert("Choose an opponent!");
       hero = binks;
       console.log(hero);
-     
+      attackerChosen = true;
       $("div.lukeS").addClass("foe");
       $("div.reyU").addClass("foe");
       $("div.dVader").addClass("foe");
       $(".jarPoints").addClass('hero-text');
-      $(".jarPoints").text(binks.HP);
+      $(".hero-text").text(binks.HP);
     }});
 
 $(".lukeS").on("click", function() {
@@ -122,12 +124,12 @@ $(".lukeS").on("click", function() {
       alert("Choose an opponent!");
       hero = luke;
       console.log(hero);
-      
+      attackerChosen = true;
       $("div.jarJar").addClass("foe");
       $("div.reyU").addClass("foe");
       $("div.dVader").addClass("foe");
       $(".lukePoints").addClass('hero-text');
-      $(".lukePoints").text(luke.HP);
+      $(".hero-text").text(luke.HP);
     }});
 
 $(".reyU").on("click", function() {
@@ -137,12 +139,12 @@ $(".reyU").on("click", function() {
       alert("Choose an opponent!");
       hero = rey;
       console.log(hero);
-     
+     attackerChosen = true;
       $("div.lukeS").addClass("foe");
       $("div.jarJar").addClass("foe");
       $("div.dVader").addClass("foe");
       $(".reyPoints").addClass('hero-text');
-      $(".reyPoints").text(rey.HP);
+      $(".hero-text").text(rey.HP);
     }});
 
 $(".dVader").on("click", function() {
@@ -152,19 +154,80 @@ $(".dVader").on("click", function() {
       alert("Choose an opponent!");
       hero = vader;
       console.log(hero);
-      
+      attackerChosen = true;
       $("div.lukeS").addClass("foe");
       $("div.reyU").addClass("foe");
       $("div.jarJar").addClass("foe");
       $(".vaderPoints").addClass('hero-text');
-      $(".vaderPoints").text(vader.HP);
+      $(".hero-text").text(vader.HP);
     }});
+
+// $(".jarJar").on("click", function() {
+ 
+//    $(this).appendTo("#attack");
+      
+//       alert("Choose an opponent!");
+//       hero = binks;
+//       console.log(hero);
+     
+//       $("div.lukeS").addClass("foe");
+//       $("div.reyU").addClass("foe");
+//       $("div.dVader").addClass("foe");
+//       $(".jarPoints").addClass('hero-text');
+//       $(".jarPoints").text(binks.HP);
+//     });
+
+// $(".lukeS").on("click", function() {
+   
+//    $(this).appendTo("#attack");
+      
+//       alert("Choose an opponent!");
+//       hero = luke;
+//       console.log(hero);
+      
+//       $("div.jarJar").addClass("foe");
+//       $("div.reyU").addClass("foe");
+//       $("div.dVader").addClass("foe");
+//       $(".lukePoints").addClass('hero-text');
+//       $(".lukePoints").text(luke.HP);
+//     });
+
+// $(".reyU").on("click", function() {
+   
+//    $(this).appendTo("#attack");
+      
+//       alert("Choose an opponent!");
+//       hero = rey;
+//       console.log(hero);
+     
+//       $("div.lukeS").addClass("foe");
+//       $("div.jarJar").addClass("foe");
+//       $("div.dVader").addClass("foe");
+//       $(".reyPoints").addClass('hero-text');
+//       $(".reyPoints").text(rey.HP);
+//     });
+
+// $(".dVader").on("click", function() {
+   
+//    $(this).appendTo("#attack");
+      
+//       alert("Choose an opponent!");
+//       hero = vader;
+//       console.log(hero);
+      
+//       $("div.lukeS").addClass("foe");
+//       $("div.reyU").addClass("foe");
+//       $("div.jarJar").addClass("foe");
+//       $(".vaderPoints").addClass('hero-text');
+//       $(".vaderPoints").text(vader.HP);
+//     });
 
 // $(".jarJar").on("click", function() {
 //   if(attackerChosen = true){
 //     $(this).appendTo("#defend");
 //   };
 // });
+
 
 $(".jarJar").on("click", function() {
   if ($(this).hasClass("foe")){
@@ -176,23 +239,8 @@ $(".jarJar").on("click", function() {
       $(".jarPoints").addClass('enemy-text');
       alert("You are now ready to attack!");
       $('.aButton').show();
+      $(".enemy-text").text(binks.HP);
     }
-
-
-  //       var audioElement2 = document.createElement("audio");
-  //     audioElement2.setAttribute("src", "assets/audio/lightsaber.mp3");
-
-  // $('.aButton').on('click', function() {
-  //   alert('Opponent has been attacked');
-  //   console.log('This is where the scoring is supposed to be... but it\'s hard...');
-  //     // The lightsaber audio is played when the attack button is clicked
-  //     audioElement2.play();
-      
-  // });
-
-
-
-
 });
 
 $(".lukeS").on("click", function() {
@@ -205,6 +253,7 @@ $(".lukeS").on("click", function() {
       $(".lukePoints").addClass('enemy-text');
       alert("You are now ready to attack!");
       $('.aButton').show();
+      $(".enemy-text").text(luke.HP);
     }
 });
 
@@ -218,6 +267,7 @@ $(".reyU").on("click", function() {
       $(".reyPoints").addClass('enemy-text');
       alert("You are now ready to attack!");
       $('.aButton').show();
+      $(".enemy-text").text(rey.HP);
     }
 });
 
@@ -231,6 +281,7 @@ $(".dVader").on("click", function() {
       $(".vaderPoints").addClass('enemy-text');
       alert("You are now ready to attack!");
       $('.aButton').show();
+      $(".enemy-text").text(vader.HP);
     }
 });
 
@@ -239,8 +290,8 @@ $(".dVader").on("click", function() {
 
   $('.aButton').click(function() {
     alert('Opponent has been attacked');
-      hero.HP = hero.HP - enemy.DEF;
-      enemy.HP = enemy.HP - hero.DEF;
+      $('.hero-text').text(hero.HP = hero.HP - enemy.DEF);
+      $('.enemy-text').text(enemy.HP = enemy.HP - hero.DEF);
       // // hero.AP=hero.AP+hero.baseAP;
       // // hero.HP = hero.HP - enemy.DEF;
       // console.log(hero.HP - enemy.DEF);
