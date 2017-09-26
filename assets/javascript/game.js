@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   // Game Music
   var audioElement = document.createElement("audio");
-      audioElement.setAttribute("src", "StarWarsTheme.m4a");
+      audioElement.setAttribute("src", "assets/audio/StarWarsTheme.m4a");
   $(".theme-button").on("click", function() {
         audioElement.play();
       });
@@ -158,7 +158,7 @@ $(".jarJar").on("click", function() {
 
 
         var audioElement2 = document.createElement("audio");
-      audioElement2.setAttribute("src", "lightsaber.mp3");
+      audioElement2.setAttribute("src", "assets/audio/lightsaber.mp3");
 
   $('.aButton').on('click', function() {
     alert('Opponent has been attacked');
