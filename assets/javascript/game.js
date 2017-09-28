@@ -15,59 +15,6 @@ $(document).ready(function() {
 
  	alert("Choose your character!");
 
-//   $('.box').on('click', function() {
-//     if(!attackerChosen) {
-//       $(this).appendTo("#attack");
-//       attackerChosen = true;
-//       alert("Choose an opponent!");
-		     
-//     } else {
-
-//       $(this).appendTo("#defend");
-//       defenderChosen = true;
-//       $("#attack").append("<button class='aButton'> Attack </button>");
-//       alert("You are now ready to attack!");
-//     }
-
-//     var audioElement2 = document.createElement("audio");
-//       audioElement2.setAttribute("src", "lightsaber.mp3");
-
-//   $('.aButton').on('click', function() {
-//     alert('Opponent has been attacked');
-//     console.log('This is where the scoring is supposed to be... but it\'s fucking hard...');
-//       // The lightsaber audio is played when the attack button is clicked
-//       audioElement2.play();
-      
-//   }) 
-//   })
-// });
-
-
-
-// Other ideas
-
-/*
-
-$("#attack").on("click", function() { 
-    if(isGameover === false) {
-        enemySelected.healthPoints -= characterSelected.attackPower;
-        characterSelected.healthPoints -= enemySelected.counterAttackPower;
-        $('#' + characterSelected.name + "HP").html("HP: " + characterSelected.healthPoints);
-        $('#' + enemySelected.name + "HP").html("HP: " + enemySelected.healthPoints);
-        console.log(enemySelected.healthPoints);
-    }
-
-});
-
-
-$("#attack").click(function() {
-  enemyHealth -= Math.floor(Math.random() * yourDamagePerMove);
-  $("#enemyHealth").html("Enemy Health: " + enemyHealth);
-})
-
-*/
-
-
 var binks = {
   HP:201,
   AP: 15,
@@ -162,73 +109,6 @@ $(".dVader").on("click", function() {
       $(".hero-text").text(vader.HP);
     }});
 
-// $(".jarJar").on("click", function() {
- 
-//    $(this).appendTo("#attack");
-      
-//       alert("Choose an opponent!");
-//       hero = binks;
-//       console.log(hero);
-     
-//       $("div.lukeS").addClass("foe");
-//       $("div.reyU").addClass("foe");
-//       $("div.dVader").addClass("foe");
-//       $(".jarPoints").addClass('hero-text');
-//       $(".jarPoints").text(binks.HP);
-//     });
-
-// $(".lukeS").on("click", function() {
-   
-//    $(this).appendTo("#attack");
-      
-//       alert("Choose an opponent!");
-//       hero = luke;
-//       console.log(hero);
-      
-//       $("div.jarJar").addClass("foe");
-//       $("div.reyU").addClass("foe");
-//       $("div.dVader").addClass("foe");
-//       $(".lukePoints").addClass('hero-text');
-//       $(".lukePoints").text(luke.HP);
-//     });
-
-// $(".reyU").on("click", function() {
-   
-//    $(this).appendTo("#attack");
-      
-//       alert("Choose an opponent!");
-//       hero = rey;
-//       console.log(hero);
-     
-//       $("div.lukeS").addClass("foe");
-//       $("div.jarJar").addClass("foe");
-//       $("div.dVader").addClass("foe");
-//       $(".reyPoints").addClass('hero-text');
-//       $(".reyPoints").text(rey.HP);
-//     });
-
-// $(".dVader").on("click", function() {
-   
-//    $(this).appendTo("#attack");
-      
-//       alert("Choose an opponent!");
-//       hero = vader;
-//       console.log(hero);
-      
-//       $("div.lukeS").addClass("foe");
-//       $("div.reyU").addClass("foe");
-//       $("div.jarJar").addClass("foe");
-//       $(".vaderPoints").addClass('hero-text');
-//       $(".vaderPoints").text(vader.HP);
-//     });
-
-// $(".jarJar").on("click", function() {
-//   if(attackerChosen = true){
-//     $(this).appendTo("#defend");
-//   };
-// });
-
-
 $(".jarJar").on("click", function() {
   if ($(this).hasClass("foe")){
       $(this).appendTo("#defend");
@@ -285,7 +165,7 @@ $(".dVader").on("click", function() {
     }
 });
 
-        var audioElement2 = document.createElement("audio");
+      var audioElement2 = document.createElement("audio");
       audioElement2.setAttribute("src", "assets/audio/lightsaber.mp3");
 
   $('.aButton').click(function() {
